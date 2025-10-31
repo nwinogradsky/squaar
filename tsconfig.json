@@ -1,5 +1,4 @@
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
   "files": [],
   "references": [
     {
@@ -14,5 +13,14 @@
     {
       "path": "./.nuxt/tsconfig.node.json"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "types": ["nuxt", "vuetify", "vite/client"],
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "allowJs": true
+  },
+  "vueCompilerOptions": {
+    "plugins": ["@vuetify/vue-volar"]
+  }
 }
