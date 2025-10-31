@@ -1,0 +1,45 @@
+/* assets/main.css */
+
+/* Fond "court de squash" minimaliste */
+body {
+  background:
+          linear-gradient(#fff 0 65%, #f6f2ea 65% 100%); /* mur blanc puis parquet */
+}
+
+/* Lignes rouges sur la zone hero (pseudo court) */
+.hero-court {
+  position: relative;
+  isolation: isolate;
+}
+.hero-court::before,
+.hero-court::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 4px; background: #C02026;
+  opacity: 0.9;
+}
+.hero-court::before { top: 72px; }   /* ligne haute */
+.hero-court::after  { top: 220px; }  /* ligne médiane */
+
+.hero-floor-line {
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  bottom: 0; width: 6px; height: 120px; background: #C02026;
+  opacity: .9; border-radius: 3px;
+}
+
+/* --- Animations d’entrée --- */
+@keyframes slideDown { from { opacity:0; transform: translateY(-24px);} to {opacity:1; transform:none;} }
+@keyframes slideLeft { from { opacity:0; transform: translateX(36px);} to {opacity:1; transform:none;} }
+@keyframes slideRight{ from { opacity:0; transform: translateX(-36px);} to {opacity:1; transform:none;} }
+@keyframes fadeIn    { from { opacity:0 } to { opacity:1 } }
+
+/* Utilitaires pour le stagger */
+.a-down   { animation: slideDown .6s cubic-bezier(.2,.8,.2,1) both; }
+.a-left   { animation: slideLeft .6s cubic-bezier(.2,.8,.2,1) both; }
+.a-right  { animation: slideRight .6s cubic-bezier(.2,.8,.2,1) both; }
+.a-fade   { animation: fadeIn .7s ease-out both; }
+
+[data-stagger] > * { opacity: 0 }
+[data-stagger] > * { animation-delay: calc(var(--stagger, .08s) * var(--i, 1)); }
