@@ -17,7 +17,7 @@ defineProps<{ text: string }>()
   border:4px solid #121212;
   border-radius:22px;
   padding:18px 22px;
-  max-width: 520px;
+  width: clamp(300px, 40vw,400px);
   box-shadow: 0 6px 0 #12121222;
 }
 .bubble-text{ font-weight: 700; font-size: clamp(18px, 2.4vw, 26px); }

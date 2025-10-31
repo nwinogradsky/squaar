@@ -5,8 +5,7 @@
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 10;
-        transition: opacity 0.3s ease;
+        z-index: 9;
       "
   >
     <v-img :src="logo" width="200" />
@@ -16,13 +15,25 @@
         position: absolute;
         bottom: 0;
         right: 0;
-        transform: translateX(-50%);
         z-index: 10;
-        transition: opacity 0.3s ease;
       "
+      class="mr-4"
   >
-    <SpeechBubble text="Salut ! Je te trouve un partenaire dans ton club ?" />
-    <v-img :src="personage" width="30vw"/>
+    <SpeechBubble text="Hello ! On joue ?" />
+    <v-img :src="personage"/>
+  </div>
+  <div
+      style="
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+      "
+      class="mb-10 ml-10"
+  >
+    <v-btn color="white text-red" variant="elevated" size="x-large">
+      <div class="text-h5 font-weight-bold">Trouver une partie</div>
+    </v-btn>
   </div>
 
 
